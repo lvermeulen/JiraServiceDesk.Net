@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.3;net452</TargetFrameworks>
+    <Version>0.0.1</Version>
+    <Authors>Luk Vermeulen</Authors>
+    <Company>Luk Vermeulen</Company>
+    <Copyright>Copyright © 2018. All rights reserved.</Copyright>
+    <PackageLicenseUrl>https://github.com/lvermeulen/JiraServiceDesk.Net/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/lvermeulen/JiraServiceDesk.Net</PackageProjectUrl>
+    <PackageIconUrl>https://i.imgur.com/ADliWXI.png?1</PackageIconUrl>
+    <RepositoryUrl>https://github.com/lvermeulen/JiraServiceDesk.Net</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Jira Service Desk</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Flurl.Http" Version="2.3.2" />
+  </ItemGroup>
+
+</Project>

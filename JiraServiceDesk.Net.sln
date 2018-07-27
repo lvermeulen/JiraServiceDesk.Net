@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JiraServiceDesk.Net", "src\JiraServiceDesk.Net\JiraServiceDesk.Net.csproj", "{1EB48756-5798-4051-A33D-D1CFBD20DB31}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JiraServiceDesk.Net.Tests", "test\JiraServiceDesk.Net.Tests\JiraServiceDesk.Net.Tests.csproj", "{96C1E511-6533-4411-8E01-7F0343E22920}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{6FF2B8A7-0530-487D-9D40-4BC14A341459}"
+	ProjectSection(SolutionItems) = preProject
+		build\build.ps1 = build\build.ps1
+		build\test.ps1 = build\test.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C492C62A-432D-4D11-80D6-8EAC52E40585}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
+		global.json = global.json
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{150E16D2-412D-404E-9B7B-514BC42ACBE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EB48756-5798-4051-A33D-D1CFBD20DB31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EB48756-5798-4051-A33D-D1CFBD20DB31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EB48756-5798-4051-A33D-D1CFBD20DB31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EB48756-5798-4051-A33D-D1CFBD20DB31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96C1E511-6533-4411-8E01-7F0343E22920}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96C1E511-6533-4411-8E01-7F0343E22920}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96C1E511-6533-4411-8E01-7F0343E22920}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{96C1E511-6533-4411-8E01-7F0343E22920} = {150E16D2-412D-404E-9B7B-514BC42ACBE0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6414D1EA-94B7-4454-885B-A9426D0FEA92}
+	EndGlobalSection
+EndGlobal
