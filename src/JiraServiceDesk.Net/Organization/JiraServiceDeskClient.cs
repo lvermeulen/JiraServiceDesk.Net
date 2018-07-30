@@ -21,7 +21,7 @@ namespace JiraServiceDesk.Net
             var queryParamValues = new Dictionary<string, object>
             {
                 ["limit"] = limit,
-                ["start"] = start,
+                ["start"] = start
             };
 
             return await GetPagedResultsAsync(maxPages, queryParamValues, async qpv =>
@@ -70,7 +70,7 @@ namespace JiraServiceDesk.Net
             var queryParamValues = new Dictionary<string, object>
             {
                 ["limit"] = limit,
-                ["start"] = start,
+                ["start"] = start
             };
 
             return await GetPagedResultsAsync(maxPages, queryParamValues, async qpv =>
