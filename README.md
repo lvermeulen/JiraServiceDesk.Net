@@ -8,7 +8,7 @@ C# client for Jira Service Desk
 
 ## Features
 * [X] Customer
-* [ ] Info
+* [X] Info
 * [X] Organization
 * [X] Queues
 * [ ] Request
