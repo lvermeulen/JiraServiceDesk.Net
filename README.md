@@ -11,5 +11,5 @@ C# client for Jira Service Desk
 * [X] Info
 * [X] Organization
 * [X] Queues
-* [ ] Request
+* [X] Request
 * [X] ServiceDesk

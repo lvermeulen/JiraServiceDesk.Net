@@ -1,4 +1,5 @@
 ﻿using System;
+using JiraServiceDesk.Net.Models.Common;
 
 namespace JiraServiceDesk.Net.Models.ServiceDesk
 {

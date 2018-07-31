@@ -7,6 +7,9 @@
         public string Next { get; set; }
         public string Prev { get; set; }
         public string JiraRest { get; set; }
+        public string Web { get; set; }
+        public string Content { get; set; }
+        public string ThumbNail { get; set; }
         public AvatarUrls AvatarUrls { get; set; }
         public AvatarUrls IconUrls { get; set; }
         public string Self { get; set; }

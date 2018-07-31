@@ -1,6 +1,6 @@
-﻿namespace JiraServiceDesk.Net.Models.ServiceDesk
+﻿namespace JiraServiceDesk.Net.Models.Common
 {
-    public class Reporter
+    public abstract class User : WithLinks
     {
         public string Name { get; set; }
         public string Key { get; set; }
@@ -8,5 +8,6 @@
         public string DisplayName { get; set; }
         public bool Active { get; set; }
         public string TimeZone { get; set; }
+
     }
 }
