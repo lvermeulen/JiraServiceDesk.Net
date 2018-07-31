@@ -62,7 +62,7 @@ namespace JiraServiceDesk.Net
             return await HandleResponseAsync(response).ConfigureAwait(false);
         }
 
-        public async Task<IEnumerable<OrganizationUser>> GetUsersInOrganizationAsync(string id,
+        public async Task<IEnumerable<User>> GetUsersInOrganizationAsync(string id,
             int? maxPages = null,
             int? limit = null,
             int? start = null)
@@ -76,12 +76,12 @@ namespace JiraServiceDesk.Net
             return await GetPagedResultsAsync(maxPages, queryParamValues, async qpv =>
                     await GetOrganizationUrl($"/{id}/user")
                         .SetQueryParams(qpv)
-                        .GetJsonAsync<PagedResults<OrganizationUser>>()
+                        .GetJsonAsync<PagedResults<User>>()
                         .ConfigureAwait(false))
                 .ConfigureAwait(false);
         }
 
-        public async Task<PagedResults<OrganizationUser>> AddUsersToOrganizationAsync(string id, IEnumerable<string> userNames)
+        public async Task<PagedResults<User>> AddUsersToOrganizationAsync(string id, IEnumerable<string> userNames)
         {
             var data = new
             {
@@ -92,7 +92,7 @@ namespace JiraServiceDesk.Net
                 .PostJsonAsync(data)
                 .ConfigureAwait(false);
 
-            return await HandleResponseAsync<PagedResults<OrganizationUser>>(response).ConfigureAwait(false);
+            return await HandleResponseAsync<PagedResults<User>>(response).ConfigureAwait(false);
         }
 
         public async Task<bool> RemoveUsersFromOrganizationAsync(string id)

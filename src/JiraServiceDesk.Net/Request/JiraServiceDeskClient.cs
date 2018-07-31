@@ -167,7 +167,7 @@ namespace JiraServiceDesk.Net
                 .ConfigureAwait(false);
         }
 
-        public async Task<IEnumerable<Participant>> GetRequestParticipantsAsync(string issueIdOrKey,
+        public async Task<IEnumerable<User>> GetRequestParticipantsAsync(string issueIdOrKey,
             int? maxPages = null,
             int? limit = null,
             int? start = null)
@@ -181,12 +181,12 @@ namespace JiraServiceDesk.Net
             return await GetPagedResultsAsync(maxPages, queryParamValues, async qpv =>
                     await GetRequestUrl($"/{issueIdOrKey}/participant")
                         .SetQueryParams(qpv)
-                        .GetJsonAsync<PagedResults<Participant>>()
+                        .GetJsonAsync<PagedResults<User>>()
                         .ConfigureAwait(false))
                 .ConfigureAwait(false);
         }
 
-        public async Task<PagedResults<Participant>> AddRequestParticipantsAsync(string issueIdOrKey, IEnumerable<string> userNames)
+        public async Task<PagedResults<User>> AddRequestParticipantsAsync(string issueIdOrKey, IEnumerable<string> userNames)
         {
             var data = new
             {
@@ -197,10 +197,10 @@ namespace JiraServiceDesk.Net
                 .PostJsonAsync(data)
                 .ConfigureAwait(false);
 
-            return await HandleResponseAsync<PagedResults<Participant>>(response).ConfigureAwait(false);
+            return await HandleResponseAsync<PagedResults<User>>(response).ConfigureAwait(false);
         }
 
-        public async Task<PagedResults<Participant>> RemoveRequestParticipantsAsync(string issueIdOrKey, IEnumerable<string> userNames)
+        public async Task<PagedResults<User>> RemoveRequestParticipantsAsync(string issueIdOrKey, IEnumerable<string> userNames)
         {
             var data = new
             {
@@ -211,7 +211,7 @@ namespace JiraServiceDesk.Net
                 .SendJsonAsync(HttpMethod.Delete, data)
                 .ConfigureAwait(false);
 
-            return await HandleResponseAsync<PagedResults<Participant>>(response).ConfigureAwait(false);
+            return await HandleResponseAsync<PagedResults<User>>(response).ConfigureAwait(false);
         }
 
         public async Task<IEnumerable<Sla>> GetRequestSlaInformationAsync(string issueIdOrKey,

@@ -9,6 +9,6 @@ namespace JiraServiceDesk.Net.Models.ServiceDesk
         public IssueType IssueType { get; set; }
         public DateTime? DueDate { get; set; }
         public DateTime? Created { get; set; }
-        public Reporter Reporter { get; set; }
+        public User Reporter { get; set; }
     }
 }

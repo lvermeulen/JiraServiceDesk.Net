@@ -6,7 +6,7 @@ namespace JiraServiceDesk.Net.Models.Info
     {
         public string Version { get; set; }
         public string PlatformVersion { get; set; }
-        public BuildDate BuildDate { get; set; }
+        public JiraServiceDeskDate BuildDate { get; set; }
         public string BuildChangeSet { get; set; }
         public bool IsLicensedForUse { get; set; }
     }

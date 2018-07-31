@@ -13,7 +13,7 @@ namespace JiraServiceDesk.Net.Models.Request
         public string RequestTypeId { get; set; }
         public string ServiceDeskId { get; set; }
         public JiraServiceDeskDate CreatedDate { get; set; }
-        public Reporter Reporter { get; set; }
+        public User Reporter { get; set; }
         public List<RequestFieldValue> RequestFieldValues { get; set; }
         public CurrentStatus CurrentStatus { get; set; }
     }

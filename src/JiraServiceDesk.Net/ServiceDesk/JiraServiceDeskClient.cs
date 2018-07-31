@@ -52,7 +52,7 @@ namespace JiraServiceDesk.Net
             return await HandleResponseAsync<IEnumerable<TemporaryAttachment>>(response, s => JsonConvert.DeserializeObject<TemporaryAttachmentsResult>(s).TemporaryAttachments).ConfigureAwait(false);
         }
 
-        public async Task<PagedResults<OrganizationUser>> AddCustomersToServiceDeskAsync(string serviceDeskId, IEnumerable<string> userNames)
+        public async Task<PagedResults<User>> AddCustomersToServiceDeskAsync(string serviceDeskId, IEnumerable<string> userNames)
         {
             var data = new
             {
@@ -64,7 +64,7 @@ namespace JiraServiceDesk.Net
                 .PostJsonAsync(data)
                 .ConfigureAwait(false);
 
-            return await HandleResponseAsync<PagedResults<OrganizationUser>>(response).ConfigureAwait(false);
+            return await HandleResponseAsync<PagedResults<User>>(response).ConfigureAwait(false);
         }
 
         public async Task<IEnumerable<Organization>> GetServiceDeskOrganizationsAsync(string serviceDeskId, 
