@@ -8,8 +8,9 @@ namespace JiraServiceDesk.Net.Models.Request
     {
         public string FieldId { get; set; }
         public string Label { get; set; }
-        [JsonConverter(typeof(StringOrStringArrayConverter))]
-        public List<string> Value { get; set; }
-        public List<RenderedValue> RenderedValue { get; set; }
+        [JsonConverter(typeof(FieldValueConverter))]
+        public List<FieldValue> Value { get; set; }
+        [JsonConverter(typeof(FieldValueConverter))]
+        public List<FieldValue> RenderedValue { get; set; }
     }
 }

@@ -1,38 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using JiraServiceDesk.Net.Models.Request;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace JiraServiceDesk.Net.Models.Common
 {
-    public class StringOrStringArrayConverter : JsonConverter
+    public class FieldValueConverter : JsonConverter
     {
-        private static readonly List<Type> s_types = new List<Type> { typeof(string), typeof(IEnumerable<string>) };
+        private static readonly List<Type> s_types = new List<Type> { typeof(FieldValue), typeof(IEnumerable<FieldValue>) };
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
-        {
-            throw new NotImplementedException();
-        }
+        { }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             if (reader.TokenType == JsonToken.String)
             {
                 var item = JToken.Load(reader);
-                return new List<string>(Enumerable.Repeat(item.Value<string>(), 1));
+                return new List<FieldValue> { new FieldValue { Value = item.Value<string>() } };
             }
 
             if (reader.TokenType == JsonToken.StartArray)
             {
                 var item = JArray.Load(reader);
-                return new List<string>(item.Select(x => x.ToString()));
+                return new List<FieldValue>(item.Select(x => JsonConvert.DeserializeObject<FieldValue>(x.ToString())));
             }
 
             if (reader.TokenType == JsonToken.StartObject)
             {
                 var item = JObject.Load(reader);
-                return new List<string>(Enumerable.Repeat(item.ToString(), 1));
+                return new List<FieldValue> { JsonConvert.DeserializeObject<FieldValue>(item.ToString()) };
             }
 
             return null;

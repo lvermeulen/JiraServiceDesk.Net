@@ -2,7 +2,7 @@
 
 namespace JiraServiceDesk.Net.Models.Request
 {
-    public class RenderedValue
+    public class FieldValue
     {
         public string Self { get; set; }
         public string Id { get; set; }
