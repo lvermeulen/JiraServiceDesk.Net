@@ -87,11 +87,11 @@ namespace JiraServiceDesk.Net
                 .ConfigureAwait(false);
         }
 
-        public async Task<bool> AddServiceDeskOrganizationAsync(string serviceDeskId, int organizationId)
+        public async Task<bool> AddServiceDeskOrganizationAsync(string serviceDeskId, string organizationId)
         {
             var data = new
             {
-                organizationId
+                organizationId = int.Parse(organizationId)
             };
 
             var response = await GetServiceDeskUrl(serviceDeskId)
@@ -102,11 +102,11 @@ namespace JiraServiceDesk.Net
             return await HandleResponseAsync(response).ConfigureAwait(false);
         }
 
-        public async Task<bool> RemoveServiceDeskOrganizationAsync(string serviceDeskId, int organizationId)
+        public async Task<bool> RemoveServiceDeskOrganizationAsync(string serviceDeskId, string organizationId)
         {
             var data = new
             {
-                organizationId
+                organizationId = int.Parse(organizationId)
             };
 
             var response = await GetServiceDeskUrl(serviceDeskId)

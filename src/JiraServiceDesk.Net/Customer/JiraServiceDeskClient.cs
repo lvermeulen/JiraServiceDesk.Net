@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Flurl.Http;
-using JiraServiceDesk.Net.Models.Customer;
+using JiraServiceDesk.Net.Models.Common;
 
 namespace JiraServiceDesk.Net
 {
@@ -9,7 +9,7 @@ namespace JiraServiceDesk.Net
         private IFlurlRequest GetCustomerUrl() => GetBaseUrl()
             .AppendPathSegment("/customer");
 
-        public async Task<Customer> CreateCustomerAsync(string email, string fullName)
+        public async Task<User> CreateCustomerAsync(string email, string fullName)
         {
             var data = new
             {
@@ -21,7 +21,7 @@ namespace JiraServiceDesk.Net
                 .PostJsonAsync(data)
                 .ConfigureAwait(false);
 
-            return await HandleResponseAsync<Customer>(response).ConfigureAwait(false);
+            return await HandleResponseAsync<User>(response).ConfigureAwait(false);
         }
     }
 }

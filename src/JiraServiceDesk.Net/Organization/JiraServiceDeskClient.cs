@@ -85,7 +85,7 @@ namespace JiraServiceDesk.Net
         {
             var data = new
             {
-                usernames = userNames
+                usernames = string.Join(",", userNames)
             };
 
             var response = await GetOrganizationUrl($"/{id}/user")
